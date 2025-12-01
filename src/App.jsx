@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import"./App.css";
 function App(){
-  const[weight,setWeight]=useState();
-  const[height,setHeight]=useState();
+  const[weight,setWeight]=useState("");
+  const[height,setHeight]=useState("");
   const[bmi,setBmi]=useState(null);
   const calculateBMI=()=>{
     if(weight&&height){
-      const heightMeter=height/100;
-      const bmiValue=(weight/(heightMeter**2)).toFixed(2);
+      const heightInMeter=height/100;
+      const bmiValue=(weight/(heightInMeter**2)).toFixed(2);
       setBmi(bmiValue);
     };
   };
@@ -28,7 +28,7 @@ function App(){
  
       />
       <button onClick={calculateBMI}>BMIcalculater</button>
-      {bmi&&<p>this is bmi:{bmi}</p>}
+      {bmi && <p>this is bmi:{bmi}</p>}
     </div>
   );
 };
